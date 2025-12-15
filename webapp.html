@@ -116,13 +116,13 @@
     <script src="https://telegram.org/js/telegram-web-app.js?59"></script>
     <script>
         let tg = window.Telegram.WebApp;
-        let buy = document.getElementById("buy")
-        let order = document.getElementById("order")
+        let buy = document.getElementById("buy");
+        let order = document.getElementById("order");
 
         buy.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
-            document.getElementById("user_name").value = tg.initDataUnsafe.user.firstname + " " + tg.initDataUnsafe.user.lastname
+            document.getElementById("user_name").value = tg.initDataUnsafe.user.firstname + " " + tg.initDataUnsafe.user.lastname;
         });
 
         order.addEventListner("click", () => {
