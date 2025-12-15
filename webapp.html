@@ -18,7 +18,7 @@
             box-sizing: border-box;
         }
 
-        /* Общие стили для тела страницы (автоматически адаптируются под тему Telegram) */
+        /* Общие стили для тела страницы (адаптация под тему Telegram) */
         body {
             font-family: 'Montserrat', sans-serif;
             font-weight: 200;
@@ -26,32 +26,29 @@
             background: var(--tg-theme-bg-color);
         }
 
-        /* Основной контейнер с центровкой содержимого */
+        /* Основной блок магазина (#main) */
         #main {
             width: 100%;
             padding: 20px;
             text-align: center;
         }
         
-        /* Стили для заголовка */
         h1 {
             margin-top: 50px;
             margin-bottom: 10px;
         }
 
-        /* Стили для изображения */
         img {
             width: 70px;
             margin: 30px auto;
         }
 
-        /* Стили для параграфа текста */
         p {
             width: 350px;
             margin: 0 auto;
         }
 
-        /* Стили для кнопки "Купить" */
+        /* Общие стили для кнопок */
         button {
             border: 0;
             border-radius: 5px;
@@ -62,23 +59,60 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 500ms ease;
-            /* Использует цвета кнопки из темы Telegram */
-            color: var(--tg-theme-button-text-color); 
-            background: var(--tg-theme-button-color); 
+            /* ВАЖНО: Цвета кнопки инвертированы согласно вашему фрагменту */
+            color: var(--tg-theme-button-color); 
+            background: var(--tg-theme-button-text-color); 
         }
         
-        /* Эффект при наведении (hover) */
         button:hover {
             background: var(--tg-theme-secondary-bg-color);
+        }
+
+        /* Стили для формы и полей ввода */
+        #form {
+            text-align: center;
+            margin-top: 20px;
+            /* Форма СКРЫТА, так как нет JS для ее показа */
+            display: none; 
+        }
+
+        input {
+            width: 90%;
+            display: block;
+            margin: 10px auto;
+            padding: 15px 10px;
+            border: 1px solid var(--tg-theme-hint-color);
+            border-radius: 5px;
+            background: var(--tg-theme-secondary-bg-color);
+            color: var(--tg-theme-text-color);
+            font-size: 16px;
+        }
+        
+        /* Стиль при фокусировке поля */
+        input:focus {
+            outline: none;
+            border-color: #db5d5d; 
+        }
+
+        #order {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-<div id="main">
-    <h1>Онлайн магазин</h1>
-    <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ipsum magni, molestias.</p>
-    <button id="buy">Купить</button>
-</div>
-</body>
+    <div id="main">
+        <h1>Онлайн магазин</h1>
+        <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ipsum magni, molestias.</p>
+        <button id="buy">Купить</button>
+    </div>
+
+    <form id="form">
+        <input type="text" placeholder="Имя" id="user_name">
+        <input type="text" placeholder="Email" id="user_email">
+        <input type="text" placeholder="Телефон" id="user_phone">
+        <button id="order">Оформить</button>
+    </form>
+    
+    </body>
 </html>
