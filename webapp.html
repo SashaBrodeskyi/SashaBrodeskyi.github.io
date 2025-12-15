@@ -127,8 +127,8 @@
             document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
         });
 
-        order.addEventListner("click", () => {
-            documet.getElementById("error").innerText = '';
+        order.addEventListener("click", () => {
+            document.getElementById("error").innerText = '';
             let name = document.getElementById("user_name").value;
             let email = document.getElementById("user_email").value;
             let phone = document.getElementById("user_phone").value;
@@ -151,7 +151,7 @@
                 email: email,
                 phone: phone
             }
-            tg.sendData(JSON.strigify("data"));
+            tg.sendData(JSON.stringify("data"));
             
             tg.close();
         });
