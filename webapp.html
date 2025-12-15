@@ -113,6 +113,21 @@
         <input type="text" placeholder="Телефон" id="user_phone">
         <button id="order">Оформить</button>
     </form>
-    
-    </body>
+    <script src="https://telegram.org/js/telegram-web-app.js?59"></script>
+    <acript>
+        let tg = window.Telegram.WebApp;
+        let buy = document.getElementById("buy")
+        let order = document.getElementById("order")
+
+        buy.addEventListener("click", () => {
+            document.getElementById("main").style.display = "none";
+            document.getElementById("form").style.display = "block";
+            document.getElementById("user_name").value = tg.initDataUnsafe.user.firstname + " " + tg.initDataUnsafe.user.lastname
+        });
+
+        order.addEventListner("click", () => {
+            tg.close();
+        });
+    </acript>
+</body>
 </html>
